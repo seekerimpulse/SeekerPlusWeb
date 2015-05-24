@@ -16,7 +16,10 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+<<<<<<< HEAD
             new SeekerPlus\PagesBundle\PagesBundle(),
+=======
+>>>>>>> master
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
