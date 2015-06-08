@@ -4,15 +4,29 @@
   * @param imgName : imagen que se remplaza por la nueva
   */
 function readURL(input,imgName) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
+  var ext = input.value.split('.');
+  ext = ext[ext.length -1];
+  
+  if(ext=='png'||ext=='jpg'||ext=='jpeg'){
+	  
+	  if (input.files && input.files[0]) {
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	      $('#'+imgName)
+	        .attr('src', e.target.result)
+	        .width(200)
+	        .height(200);
+	    };
+	    reader.readAsDataURL(input.files[0]);
+	   }
+  }
+  else{
+	  showMessageDialog('alert','Error','El archivo seleccionado no es una imagen.<br>Porfavor Seleccione un archivo Valido.',1000);
+	  input.value = '';
       $('#'+imgName)
-        .attr('src', e.target.result)
-        .width(130)
-        .height(130);
-    };
-    reader.readAsDataURL(input.files[0]);
+      .attr('src','')
+      .width(200)
+      .height(200);
   }
 }
 
@@ -80,4 +94,12 @@ if(largo > nmrs && crtr == true)
 	 input.value =cad2
 	}
 input.focus()
+}
+/**
+ * Permite Mostrar un Mensaje de Dialogo
+ */
+function showMessageDialog(typeOfDialog,titleOfDialog,contentOfDialog,time){
+    setTimeout(function(){
+        $.Notify({type: typeOfDialog, caption: titleOfDialog, content: contentOfDialog});
+    }, time);
 }

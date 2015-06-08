@@ -1,0 +1,24 @@
+my_ads:
+    pattern:  /my-ads
+    defaults: { _controller: AdsmanagerBundle:Ads:myAds }
+new_ads:
+    pattern:  /new-ads
+    defaults: { _controller: AdsmanagerBundle:Ads:newAds }
+edit_ads:
+    pattern:  /edit-ads/{id}/
+    defaults: { _controller: AdsmanagerBundle:Ads:editAds }
+delete_ads:
+    pattern:  /delete-ads/{id}/
+    defaults: { _controller: AdsmanagerBundle:Ads:deleteAds }
+renew_ads:
+    pattern:  /renew-ads/{id}/
+    defaults: { _controller: AdsmanagerBundle:Ads:renewAds }
+new_ads_product:
+    pattern:  /new-ads-product/{id}/
+    defaults: { _controller: AdsmanagerBundle:Product:newAdsProduct }
+edit_product_ads:
+    pattern:  /edit-product-ads/{id}/
+    defaults: { _controller: AdsmanagerBundle:Product:editAdsProduct }
+delete_product_ads:
+    pattern:  /delete-product-ads/{id}/
+    defaults: { _controller: AdsmanagerBundle:Product:deleteProductAds }

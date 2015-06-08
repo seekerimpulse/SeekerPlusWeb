@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -71,3 +71,30 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_facebook:
+    alias:  facebook
+    app_id: 1624929451053830
+    secret: d08be4b2173622fb360df858def1b8c6
+    cookie: true
+    permissions: [email,user_birthday,user_location]
+
+fos_user:
+    db_driver:          orm
+    firewall_name:      public
+    user_class:         SeekerPlus\UserBundle\Entity\User
+    registration:
+        confirmation:
+            enabled:    true
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        my_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [200,200], mode: inset }

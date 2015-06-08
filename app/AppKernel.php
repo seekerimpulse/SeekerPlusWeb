@@ -17,6 +17,12 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new SeekerPlus\PagesBundle\PagesBundle(),
+        	new FOS\UserBundle\FOSUserBundle(),
+            new SeekerPlus\UserBundle\UserBundle(),
+            new FOS\FacebookBundle\FOSFacebookBundle(),
+            new SeekerPlus\AdsmanagerBundle\AdsmanagerBundle(),
+        	new Liip\ImagineBundle\LiipImagineBundle(),
+            new SeekerPlus\BannerBundle\BannerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

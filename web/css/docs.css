@@ -3,7 +3,7 @@ body {
 }
 
 .page-content {
-    padding-top: 48px;
+    padding-top: 3.5rem !important;
 }
 
 .color-list li {
@@ -33,10 +33,10 @@ body {
 
 @media screen and (max-width: 800px) {
     .app-bar.fixed-top {
-        position: relative !important;
+
     }
     .page-content {
-        padding-top: 0 !important;
+
     }
 }
 

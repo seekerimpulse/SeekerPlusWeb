@@ -9,9 +9,9 @@ if (typeof jQuery === 'undefined') {
 
 window.METRO_VERSION = '3.0.0';
 window.METRO_AUTO_REINIT = true;
-window.METRO_LANGUAGE = 'en';
-window.METRO_LOCALE = 'EN_en';
-window.METRO_CURRENT_LOCALE = 'en';
+window.METRO_LANGUAGE = 'es';
+window.METRO_LOCALE = 'ES_es';
+window.METRO_CURRENT_LOCALE = 'es';
 window.METRO_SHOW_TYPE = 'slide';
 window.METRO_DEBUG = true;
 

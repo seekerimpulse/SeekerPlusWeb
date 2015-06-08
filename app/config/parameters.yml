@@ -1,14 +1,14 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_mysql
-    database_host: 127.0.0.1
+    database_host: localhost
     database_port: null
-    database_name: symfony
+    database_name: seekerplusJokte
     database_user: root
-    database_password: null
+    database_password: undertaker
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-    locale: en
+    locale: es
     secret: 4311c47452e370f6b8f9dad13222508544c6ff2a

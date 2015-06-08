@@ -9002,7 +9002,7 @@ input[type="submit"].link:active {
   border-top: 1px #1d1d1d dotted;
   position: relative;
   padding: 0;
-  margin: 30px 0;
+  margin: 1rem;
   width: 100%;
 }
 .stepper > ul li {
@@ -12634,17 +12634,17 @@ input[type="submit"].link:active {
   text-overflow: ellipsis;
 }
 .listview-outlook .list .list-content .list-title {
-  line-height: 1;
+  line-height: 1.4;
 }
 .listview-outlook .list .list-content .list-subtitle {
   font-size: .75rem;
-  line-height: 1.2;
+  line-height: 1.3;
   font-weight: 500;
   color: #0067cb;
 }
 .listview-outlook .list .list-content .list-remark {
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.3;
   font-size: .625rem;
   color: #999999;
 }
@@ -12739,6 +12739,7 @@ input[type="submit"].link:active {
   right: 0;
   width: auto;
   z-index: 1061;
+  left: 0;
 }
 .notify-container:before,
 .notify-container:after {

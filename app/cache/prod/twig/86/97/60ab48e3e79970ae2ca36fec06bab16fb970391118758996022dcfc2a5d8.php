@@ -67,41 +67,36 @@ class __TwigTemplate_869760ab48e3e79970ae2ca36fec06bab16fb970391118758996022dcfc
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
-        
         <script src=\"";
-        // line 18
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-2.1.3.min.js"), "html", null, true);
         echo "\"></script>
     \t<script src=\"";
-        // line 19
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/metro.js"), "html", null, true);
         echo "\"></script>
     \t<script src=\"";
-        // line 20
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/docs.js"), "html", null, true);
         echo "\"></script>
     \t<script src=\"";
-        // line 21
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/prettify/run_prettify.js"), "html", null, true);
         echo "\"></script>
     \t<script src=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/ga.js"), "html", null, true);
         echo "\"></script>
-    \t<script src=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/myJs.js"), "html", null, true);
-        echo "\"></script>
         ";
-        // line 24
+        // line 22
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
+        // line 23
         echo "    </head>
     <body>
     ";
-        // line 27
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 129
+        // line 180
         echo "</html>";
     }
 
@@ -125,101 +120,228 @@ class __TwigTemplate_869760ab48e3e79970ae2ca36fec06bab16fb970391118758996022dcfc
     {
     }
 
-    // line 24
+    // line 22
     public function block_javascripts($context, array $blocks = array())
     {
     }
 
-    // line 27
+    // line 25
     public function block_body($context, array $blocks = array())
     {
-        // line 28
+        // line 26
         echo "    ";
         $this->displayBlock('menu', $context, $blocks);
-        // line 71
+        // line 89
         echo "
 ";
-        // line 72
+        // line 90
         $this->displayBlock('content', $context, $blocks);
-        // line 74
+        // line 125
         echo "
 ";
-        // line 75
+        // line 126
         $this->displayBlock('footer', $context, $blocks);
-        // line 127
+        // line 178
         echo "    </body>
 ";
     }
 
-    // line 28
+    // line 26
     public function block_menu($context, array $blocks = array())
     {
-        // line 29
-        echo "<div class=\"app-bar\" data-role=\"appbar\">
+        // line 27
+        echo "<div class=\"app-bar fixed-top\" data-role=\"appbar\">
 \t<a style=\"font-size: 1.2rem;\" href=\"";
-        // line 30
+        // line 28
         echo $this->env->getExtension('routing')->getPath("index");
         echo "\"
 \t\t\" class=\"app-bar-element branding\"> 
 \t\t<img style=\"width: 2rem; margin-right: 0.5rem;\" alt=\"\"
 \t\tsrc=\"";
-        // line 33
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/logo.png"), "html", null, true);
         echo "\"> SeekerPlus
 \t</a> <span class=\"app-bar-pull\"></span>
 \t<div class=\"app-bar-divider\"></div>
 \t<ul class=\"app-bar-menu\">
-\t\t<li data-flexorder=\"1\" data-flexorderorigin=\"0\"><a href=\"\"><span class=\"mif-display\"></span> App</a></li>
-\t\t<li data-flexorder=\"2\" data-flexorderorigin=\"1\"><a href=\"";
-        // line 38
-        echo $this->env->getExtension('routing')->getPath("servicios");
-        echo "\"><span class=\"mif-tags\"></span> Servicios</a></li>
-\t\t<li data-flexorder=\"3\" data-flexorderorigin=\"2\"><a href=\"";
+\t\t<li data-flexorder=\"1\" data-flexorderorigin=\"0\">
+\t\t\t<a href=\"\"><span class=\"mif-display\"></span> App</a>
+\t\t</li>
+\t\t<li data-flexorder=\"2\" data-flexorderorigin=\"1\">
+\t\t\t<a href=\"";
         // line 39
+        echo $this->env->getExtension('routing')->getPath("servicios");
+        echo "\"><span class=\"mif-tags\"></span> Servicios</a>
+\t\t</li>
+\t\t<li data-flexorder=\"3\" data-flexorderorigin=\"2\">
+\t\t\t<a href=\"";
+        // line 42
         echo $this->env->getExtension('routing')->getPath("contactenos");
-        echo "\"><span class=\"mif-contacts-mail\"></span> Contactenos</a></li>
-\t\t<li data-flexorder=\"4\" data-flexorderorigin=\"3\"><a href=\"\"><span class=\"mif-question\"></span> Ayuda</a></li>
+        echo "\"><span class=\"mif-contacts-mail\"></span> Contactenos</a>
+\t\t</li>
+\t\t<li data-flexorder=\"4\" data-flexorderorigin=\"3\">
+\t\t\t<a href=\"\"><span class=\"mif-question\"></span> Ayuda</a>
+\t\t</li>
+\t\t";
+        // line 47
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 48
+            echo "\t\t<li>
+\t\t<a href=\"\" class=\"dropdown-toggle\"><span class=\"mif-user\"></span>";
+            // line 49
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logged_in_as", array("%username%" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "user", array()), "firstname", array())), "FOSUserBundle"), "html", null, true);
+            echo "</a>
+\t\t<ul style=\"display: none;\" class=\"d-menu\" data-role=\"dropdown\">
+\t\t\t<li data-flexorder=\"2\" data-flexorderorigin=\"1\">
+\t\t\t  <a href=\"";
+            // line 52
+            echo $this->env->getExtension('routing')->getPath("fos_user_profile_edit");
+            echo "\"><span class=\"mif-profile\"></span> Perfil</a> 
+\t\t\t</li>
+\t\t\t<li data-flexorder=\"3\" data-flexorderorigin=\"2\">
+\t\t\t  <a href=\"";
+            // line 55
+            echo $this->env->getExtension('routing')->getPath("my_ads");
+            echo "\"><span class=\"mif-file-text\"></span> Mis Anuncios</a> 
+\t\t\t</li>
+\t\t\t<li data-flexorder=\"4\" data-flexorderorigin=\"3\">
+\t\t\t  <a href=\"";
+            // line 58
+            echo $this->env->getExtension('routing')->getPath("fos_user_change_password");
+            echo "\"><span class=\"mif-lock\"></span> Cambiar Contraseña</a> 
+\t\t\t</li>
+\t\t\t<li data-flexorder=\"5\" data-flexorderorigin=\"4\">
+\t\t\t\t<a href=\"";
+            // line 61
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\"><span class=\"mif-exit\"></span> Salir</a> 
+\t\t\t</li>
+\t\t</ul>
+\t\t</li>
 \t</ul>
-\t<div class=\"app-bar-element\">
-\t\t<a class=\"dropdown-toggle fg-white\"><span class=\"mif-user\"></span>
-\t\tLogin
-\t\t</a>
-\t\t<div style=\"display: none;\"
-\t\t\tclass=\"app-bar-drop-container bg-white fg-dark place-right\"
-\t\t\tdata-role=\"dropdown\" data-no-close=\"true\">
-\t\t\t<div class=\"padding20\">
-\t\t\t\t<form>
-\t\t\t\t\t<h4 class=\"text-light\">Iniciar Sesión</h4>
-\t\t\t\t\t<div class=\"input-control text\">
-\t\t\t\t\t\t<span class=\"mif-user prepend-icon\"></span> <input type=\"text\">
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"input-control text\">
-\t\t\t\t\t\t<span class=\"mif-lock prepend-icon\"></span> <input type=\"password\">
-\t\t\t\t\t</div>
-\t\t\t\t\t<label class=\"input-control checkbox small-check\"> <input
-\t\t\t\t\t\ttype=\"checkbox\"> <span class=\"check\"></span> 
-\t\t\t\t\t\t<span class=\"caption\">Recuerdame</span>
-\t\t\t\t\t</label>
+\t";
+        } else {
+            // line 67
+            echo "\t</ul>
+\t\t<div class=\"app-bar-element\">
+\t\t\t<a class=\"dropdown-toggle fg-white\"><span class=\"mif-user\"></span>
+\t\t\t Mi Cuenta
+\t\t\t</a>
+\t\t\t<div style=\"display: none;width: 10rem;\"
+\t\t\t\tclass=\"app-bar-drop-container bg-white fg-dark place-right\"
+\t\t\t\tdata-role=\"dropdown\" data-no-close=\"true\">
+\t\t\t\t<div class=\"padding10\">
 \t\t\t\t\t<div class=\"form-actions\">
-\t\t\t\t\t\t<button class=\"button\">Ingresar</button>
+\t\t\t\t\t\t<a href=\"";
+            // line 77
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\"><button class=\"button success\">Iniciar Sesión</button></a>
 \t\t\t\t\t</div>
-\t\t\t\t</form>
+\t\t\t\t\t<h5>¿No dispones de una cuenta en SeekerPlus? 
+\t\t\t\t\t\t<a href=\"";
+            // line 80
+            echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+            echo "\">Regístrate ahora</a>
+\t\t\t\t\t</h5>
+\t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
-\t</div>
+\t\t";
+        }
+        // line 86
+        echo "\t\t
 </div>
 ";
     }
 
-    // line 72
+    // line 90
     public function block_content($context, array $blocks = array())
     {
+        // line 91
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "information"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 92
+            echo "    <div class=\"container page-content fg-dark\">
+\t    <div class=\"notify info\">
+\t       <span class=\"notify-title\">Tenga en Cuenta</span>
+\t       <span class=\"notify-text\">";
+            // line 95
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "</span>
+\t     </div>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 99
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "success"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 100
+            echo "    <div class=\"container page-content fg-dark\">
+\t    <div class=\"notify success\">
+\t       <span class=\"notify-title\">Felicitaciones</span>
+\t       <span class=\"notify-text\">";
+            // line 103
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "</span>
+\t     </div>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 107
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "error"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 108
+            echo "    <div class=\"container page-content fg-dark\">
+\t    <div class=\"notify alert\">
+\t       <span class=\"notify-title\">Error</span>
+\t       <span class=\"notify-text\">";
+            // line 111
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "</span>
+\t     </div>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 115
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "flashbag", array()), "get", array(0 => "warning"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 116
+            echo "    <div class=\"container page-content fg-dark\">
+\t    <div class=\"notify warning\">
+\t       <span class=\"notify-title\">Cuidado !</span>
+\t       <span class=\"notify-text\">";
+            // line 119
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "</span>
+\t     </div>
+    </div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 123
+        echo "
+";
     }
 
-    // line 75
+    // line 126
     public function block_footer($context, array $blocks = array())
     {
-        // line 76
+        // line 127
         echo "<footer style=\"background-color: #323232;margin-top:3rem\">
     <div class=\"container\">
         <div class=\"padding20\">
@@ -232,7 +354,7 @@ class __TwigTemplate_869760ab48e3e79970ae2ca36fec06bab16fb970391118758996022dcfc
                         <span style=\"font-size: 6rem;\" class=\"mif-mobile\"></span>
 \t\t\t\t\t\t   <a href=\"https://play.google.com/store/apps/details?id=com.seekerimpulse.SeekerPlus\" target=\"_blank\"><img style=\"margin-right: 0.5rem;\" alt=\"\"
 \t\t\t\t\t\t\t\t\t\t src=\"";
-        // line 87
+        // line 138
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/android.png"), "html", null, true);
         echo "\"
 \t\t\t\t\t\t\t></a>
@@ -260,13 +382,13 @@ class __TwigTemplate_869760ab48e3e79970ae2ca36fec06bab16fb970391118758996022dcfc
                     \t<h4 class=\"fg-white padding10 text-shadow\">Legal</h4>
                     \t<ul style=\"list-style: outside none none;margin: 0px 30px 0px 0px;padding: 0px;float: left;\">
                     \t\t<li><a class=\"fg-white\" href=\"";
-        // line 112
+        // line 163
         echo $this->env->getExtension('routing')->getPath("condicionesDeUso");
-        echo "\"\"><span class=\"mif-file-text\"></span> Condiciones de uso</a></li>
+        echo "\"><span class=\"mif-file-text\"></span> Condiciones de uso</a></li>
                     \t\t<li><a class=\"fg-white\" href=\"";
-        // line 113
+        // line 164
         echo $this->env->getExtension('routing')->getPath("politicasDePrivacidad");
-        echo "\"\"><span class=\"mif-security\"></span> Política de privacidad</a></li>
+        echo "\"><span class=\"mif-security\"></span> Política de privacidad</a></li>
                     \t</ul>
                     </div>
                 </div>
@@ -294,6 +416,6 @@ class __TwigTemplate_869760ab48e3e79970ae2ca36fec06bab16fb970391118758996022dcfc
 
     public function getDebugInfo()
     {
-        return array (  268 => 113,  264 => 112,  236 => 87,  223 => 76,  220 => 75,  215 => 72,  179 => 39,  175 => 38,  167 => 33,  161 => 30,  158 => 29,  155 => 28,  150 => 127,  148 => 75,  145 => 74,  143 => 72,  140 => 71,  137 => 28,  134 => 27,  129 => 24,  124 => 15,  119 => 10,  114 => 8,  109 => 7,  105 => 129,  103 => 27,  99 => 25,  97 => 24,  93 => 23,  89 => 22,  85 => 21,  81 => 20,  77 => 19,  73 => 18,  67 => 16,  65 => 15,  61 => 14,  57 => 13,  53 => 12,  49 => 11,  45 => 10,  40 => 8,  36 => 7,  28 => 1,);
+        return array (  390 => 164,  386 => 163,  358 => 138,  345 => 127,  342 => 126,  337 => 123,  327 => 119,  322 => 116,  318 => 115,  308 => 111,  303 => 108,  299 => 107,  289 => 103,  284 => 100,  280 => 99,  270 => 95,  265 => 92,  261 => 91,  258 => 90,  252 => 86,  243 => 80,  237 => 77,  225 => 67,  216 => 61,  210 => 58,  204 => 55,  198 => 52,  192 => 49,  189 => 48,  187 => 47,  179 => 42,  173 => 39,  162 => 31,  156 => 28,  153 => 27,  150 => 26,  145 => 178,  143 => 126,  140 => 125,  138 => 90,  135 => 89,  132 => 26,  129 => 25,  124 => 22,  119 => 15,  114 => 10,  109 => 8,  104 => 7,  100 => 180,  98 => 25,  94 => 23,  92 => 22,  88 => 21,  84 => 20,  80 => 19,  76 => 18,  72 => 17,  67 => 16,  65 => 15,  61 => 14,  57 => 13,  53 => 12,  49 => 11,  45 => 10,  40 => 8,  36 => 7,  28 => 1,);
     }
 }
